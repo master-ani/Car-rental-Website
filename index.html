@@ -6,65 +6,75 @@
     <title>Car Rental</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/4211e47522.js" crossorigin="anonymous"></script>
+    <script src="app.js" defer></script>
 </head>
 <body>
     <nav id="nav">
         <div class="row nav__row">
-            <img src="assets/logo.png" alt="" class="nav__logo">
+            <a href="#home" class="nav__image__wrapper">
+                <img src="assets/logo.png" alt="" class="nav__image">
+            </a>
             <div class="nav__links">
                 <a href="#home" class="nav__link">Home</a>
-                <a href="#features" class="nav__link">About</a>
+                <a href="#about" class="nav__link">About</a>
                 <a href="#vehicles" class="nav__link">Vehicle Models</a>
                 <a href="#testimonials" class="nav__link">Testimonials</a>
                 <a href="#team" class="nav__link">Our Team</a>
                 <a href="#contact" class="nav__link">Contact</a>
             </div>
-            <div class="nav__links">
-                <a href="#signin" class="nav__link">
-                    Sign In
-                </a>
-                <a href="#register" class="nav__link">
-                    <button class="nav__link__button">
-                        Register
-                    </button>
-                </a>
+            <div class="nav__buttons">
+                <a href="#" class="nav__link">Sign In</a>
+                <button class="nav__button">Register</button>
             </div>
+            <button class="nav__menu" onclick="openMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <nav class="menu">
+                <button class="menu__close" onclick="closeMenu()">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+                <div class="menu__links">
+                    <a href="#home" class="menu__link" onclick="closeMenu()">Home</a>
+                    <a href="#about" class="menu__link" onclick="closeMenu()">About</a>
+                    <a href="#vehicles" class="menu__link" onclick="closeMenu()">Vehicle Models</a>
+                    <a href="#testimonials" class="menu__link" onclick="closeMenu()">Testimonials</a>
+                    <a href="#team" class="menu__link" onclick="closeMenu()">Our Team</a>
+                    <a href="#contact" class="menu__link" onclick="closeMenu()">Contact</a>
+                </div>
+            </nav>
         </div>
     </nav>
 
     <header id="header">
         <div class="container">
+            <img src="assets/header-bg.png" alt="" class="header__bg">
             <div class="row header__row">
-                <div class="header__text">
-                    <h4 class="header__subtitle">
-                       Plan your trip now 
-                    </h4>
-                    <h1 class="header__title">
-                        Save 
-                        <span class="color-primary">big</span>
-                        with our car rental
-                    </h1>
-                    <p class="header__paragraph">
-                        Rent the car of your dreams. Unbeatable prices,
-                         unlimited miles, flexible pick-up options and much more. 
-                    </p>
-                    <div class="header__links">
-                        <div class="header__link">
-                            <a href="#book-ride">
-                                <button class="header__button1">
-                                    Book Ride
-                                </button>
-                            </a>
-                            <a href="#learn-more">
-                                <button class="header__button2">
-                                    Learn More
-                                </button>
-                            </a>
+                <div class="header__content">
+                    <div class="header__text">
+                        <h3 class="header__subtitle">
+                            Plan your trip now
+                        </h3>
+                        <h1 class="header__title">
+                            Save
+                            <span class="color-primary">big</span>
+                            with our car rental
+                        </h1>
+                        <p class="header__paragraph">
+                            Rent the car of your dreams. Unbeatable prices, 
+                            unlimited miles, flexible pick-up options and much more
+                        </p>
+                        <div class="header__buttons">
+                            <button class="header__button1">
+                                Book Ride <i class="fa-regular fa-circle-check"></i>
+                            </button>
+                            <button class="header__button2">
+                               Learn More  <i class="fa-solid fa-angle-right"></i>
+                            </button>
                         </div>
                     </div>
-                </div>
-                <div class="header__car__image">
-                    <img src="assets/header-car.png" alt="" class="header__car">
+                    <div class="header__image__wrapper">
+                        <img src="assets/header-car.png" alt="" class="header__image">
+                    </div>
                 </div>
             </div>
         </div>
@@ -84,8 +94,8 @@
                 </div>
                 <div class="features__list">
                     <div class="feature">
-                        <div class="feature__image">
-                            <img src="assets/feature-1.png" alt="">
+                        <div class="feature__image__wrapper">
+                            <img src="assets/feature-1.png" alt="" class="feature__image">
                         </div>
                         <h4 class="feature__title">
                             Select Car
@@ -97,8 +107,8 @@
                         </p>
                     </div>
                     <div class="feature">
-                        <div class="feature__image">
-                            <img src="assets/feature-2.png" alt="">
+                        <div class="feature__image__wrapper">
+                            <img src="assets/feature-2.png" alt="" class="feature__image">
                         </div>
                         <h4 class="feature__title">
                             Contact Operator
@@ -110,8 +120,8 @@
                         </p>
                     </div>
                     <div class="feature">
-                        <div class="feature__image">
-                            <img src="assets/feature-3.png" alt="">
+                        <div class="feature__image__wrapper">
+                            <img src="assets/feature-3.png" alt="" class="feature__image">
                         </div>
                         <h4 class="feature__title">
                             Let's Drive
@@ -147,9 +157,9 @@
         <section id="vehicles">
             <div class="container">
                 <div class="row vehicles__row">
-                    <div class="vehicles__image">
-                        <img src="assets/choose-car.png" alt="">
-                    </div>
+                    <figure class="vehicles__image__wrapper">
+                        <img src="assets/choose-car.png" alt="" class="vehicles__image">
+                    </figure>
                     <div class="vehicles__content">
                         <div class="vehicles__text">
                             <h3 class="vehicles__subtitle">
@@ -168,14 +178,17 @@
                                 so don't miss out on your chance to save big.
                             </p>
                             <button class="vehicles__button">
+                               <span class="vehicles__button__span">
                                 Find Details
+                               </span>
+                               <i class="fa-solid fa-angle-right"></i>
                             </button>
                         </div>
                         <div class="vehicles__infos">
                             <div class="vehicles__info">
-                            <div class="vehicle__image">
-                                <img src="assets/choose-1.png" alt="">
-                            </div>
+                            <figure class="vehicle__image__wrapper">
+                                <img src="assets/choose-1.png" alt="" class="vehicle__image">
+                            </figure>
                             <div class="vehicle__text">
                                 <h4 class="vehicle__title">
                                     Cross Country Drive
@@ -189,9 +202,9 @@
                             
                             </div>
                             <div class="vehicles__info">
-                                <div class="vehicle__image">
-                                <img src="assets/choose-2.png" alt="">
-                            </div>
+                                <figure class="vehicle__image__wrapper">
+                                <img src="assets/choose-2.png" alt="" class="vehicle__image">
+                                </figure>
                             <div class="vehicle__text">
                                 <h4 class="vehicle__title">
                                     All Inclusive Pricing
@@ -204,9 +217,9 @@
                             </div>
                             </div>
                             <div class="vehicles__info">
-                                <div class="vehicle__image">
-                                <img src="assets/choose-3.png" alt="">
-                            </div>
+                                <figure class="vehicle__image__wrapper">
+                                <img src="assets/choose-3.png" alt="" class="vehicle__image">
+                                </figure>
                             <div class="vehicle__text">
                                 <h4 class="vehicle__title">
                                     No Hidden Charges
@@ -325,7 +338,7 @@
             <div class="row footer__row">
                 <div class="footer__info footer__content">
                     <h2 class="footer__info__title">
-                        Car Rental
+                        <b>CAR</b> Rental
                     </h2>
                     <p class="footer__info__paragraph">
                         We offer a big range of vehicles for all
@@ -346,7 +359,7 @@
                 </div>
                 <div class="footer__company footer__content">
                     <h2 class="footer__company__title">
-                        Company
+                        COMPANY
                     </h2>
                     <div class="footer__company__links">
                         <a href="#" class="footer__company__link">New York</a>
@@ -358,7 +371,7 @@
                 </div>
                 <div class="footer__hours footer__content">
                     <h2 class="footer__hours__title">
-                        Working Hours
+                        WORKING HOURS
                     </h2>
                     <div class="footer__hours__list">
                         <span class="footer__hours__time">
@@ -374,7 +387,7 @@
                 </div>
                 <div class="footer__subscription footer__content">
                     <h2 class="footer__subs__title">
-                        Subscription
+                        SUBSCRIPTION
                     </h2>
                     <p class="footer__subs__text">
                         Subscribe your Email address for latest updates
